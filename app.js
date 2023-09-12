@@ -3,8 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
-const { PORT = 3000 } = process.env;
-const DB_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb';
+const { PORT = 3001, NODE_ENV, DB_ADDRESS } = process.env;
 const app = express();
 const { errors } = require('celebrate');
 const helmet = require('helmet');
@@ -34,6 +33,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
+const DB_URL = NODE_ENV === 'production' ? DB_ADDRESS : 'mongodb://127.0.0.1:27017/bitfilmsdb';
 mongoose.connect(DB_URL, {
   useNewUrlParser: true,
 })

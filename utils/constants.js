@@ -7,6 +7,7 @@ const FORBIDDEN_ERROR_CODE = 403;
 const CONFLICT_ERROR_CODE = 409;
 const SECRET_KEY = 'some-super-secret-key';
 const REGEXP_URL = /^https?:\/\/(www\.)?[-a-zA-Z0-9._]{1,}\.[a-zA-Z0-9]{1,8}\b([a-zA-Z0-9\-._~:/?#[\]@!$&%'()*+,;=]*)?$/;
+const DB_ADDRESS_LOCAL = 'mongodb://127.0.0.1:27017/bitfilmsdb';
 
 module.exports = {
   CREATED_OK_CODE,
@@ -18,4 +19,5 @@ module.exports = {
   CONFLICT_ERROR_CODE,
   SECRET_KEY,
   REGEXP_URL,
+  DB_ADDRESS_LOCAL,
 };

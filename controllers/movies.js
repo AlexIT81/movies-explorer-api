@@ -9,7 +9,8 @@ const {
 const { CREATED_OK_CODE } = require('../utils/constants');
 
 module.exports.getAllMovies = (req, res, next) => {
-  Movie.find({})
+  const owner = req.user._id;
+  Movie.find({ owner })
     .then((movies) => res.send({ data: movies }))
     .catch(next);
 };

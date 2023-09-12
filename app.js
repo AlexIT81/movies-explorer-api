@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 
-const { PORT = 3001, NODE_ENV, DB_ADDRESS } = process.env;
+const { PORT = 3000, NODE_ENV, DB_ADDRESS } = process.env;
 const app = express();
 const { errors } = require('celebrate');
 const helmet = require('helmet');
